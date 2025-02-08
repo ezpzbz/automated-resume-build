@@ -2,6 +2,7 @@ VERSION 0.6
 all:
   BUILD +test
   BUILD +build
+  BUILD +build-industry
 
 test:
   BUILD +test-prettier
@@ -42,3 +43,18 @@ build:
     -output-directory=/opt/resume \
     /opt/resume/src/resume.tex
   SAVE ARTIFACT ./resume.pdf AS LOCAL ./resume.pdf
+
+build-industry:
+  FROM ghcr.io/xu-cheng/texlive-full:20220701
+  WORKDIR /opt/resume
+  COPY --dir src ./
+  RUN latexmk \
+    -cd \
+    -lualatex \
+    --file-line-error \
+    --halt-on-error \
+    --interaction=nonstopmode \
+    -recorder \
+    -output-directory=/opt/resume \
+    /opt/resume/src/resume_industry.tex
+  SAVE ARTIFACT ./resume_industry.pdf AS LOCAL ./resume_industry.pdf
