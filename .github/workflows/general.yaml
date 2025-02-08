@@ -51,7 +51,7 @@ jobs:
           root_file: resume.tex
           latexmk_use_lualatex: true
       - name: Upload resume.pdf
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: resume
           path: src/resume.pdf
@@ -71,7 +71,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Download resume.pdf from build-latex
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: resume
       - name: Setup Node.js
