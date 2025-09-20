@@ -1,4 +1,3 @@
-%!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 % Awesome CV LaTeX Template for CV/Resume
 %
@@ -16,11 +15,12 @@
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 %
 
-
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
+% !TEX program = lualatex
+
 \documentclass[11pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
@@ -32,7 +32,7 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-emerald}
+\colorlet{awesome}{awesome-skyblue}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
 
@@ -42,7 +42,9 @@
 % \definecolor{text}{HTML}{333333}
 % \definecolor{graytext}{HTML}{5D5D5D}
 % \definecolor{lighttext}{HTML}{999999}
-% \definecolor{sectiondivider}{HTML}{5D5D5D}
+% \definecolor{futurepurple}{HTML}{8a00c2}
+\definecolor{futurepurple}{HTML}{ba68c8}
+% \definecolor{futuregreen}{HTML}{66bb6a}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{false}
@@ -50,20 +52,19 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-
 %-------------------------------------------------------------------------------
 %  PERSONAL INFORMATION
 %  Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./examples/profile}
-\name{Kirin}{Hou}
-\position{Software Engineer{\enskip\cdotp\enskip}DevOps Engineer}
-\email{me@kirintw.me}
-\linkedin{kirin-hou}
-\github{kirintwn}
+\name{Dr Pezhman}{Zarabadi}
+\position{Principal Data Engineer}
+\email{pezhman.zarabadipoor@fortescue.com}
+\linkedin{pezh-zarabadi}
+\github{ezpzbz}
 % \homepage{resume.kirintw.me}
-\location{Taiwan}
+\location{Oxford, UK}
 %-------------------------------------------------------------------------------
 
 \begin{document}
@@ -75,9 +76,9 @@
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-  {\today}
-  {Up-to-date version at \upshape\color{text}\url{https://resume.kirintw.me}}
-  {\thepage}
+{\today}
+{Up-to-date version at \upshape\color{text}\url{https://resume.kirintw.me}}
+{\thepage}
 
 %-------------------------------------------------------------------------------
 %  CV/RESUME CONTENT
@@ -85,11 +86,16 @@
 %-------------------------------------------------------------------------------
 \input{sections/summary.tex}
 \input{sections/experience.tex}
+\medskip
+\vspace{1em}
 \input{sections/education.tex}
 \vspace{-1em}
 \input{sections/skills.tex}
+\input{sections/skills-pezh.tex}
+\input{sections/tech.tex}
 \medskip
 \input{sections/projects.tex}
+\input{sections/publications.tex}
 
 %-------------------------------------------------------------------------------
 \end{document}
